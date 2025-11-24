@@ -1,0 +1,65 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+html,body{
+width: 100%;
+height: 100%;
+}
+
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(129, 99, 177, 0.466);
+}
+
+#card{
+    height: 400px;
+    width: 280px;
+    border-radius: 10px;
+    padding: 10px 10px;
+    border: 1px solid gray;
+    text-align: center;
+    background-color: white;
+}
+
+#card img{
+    height: 55%;
+    width: 100%;
+    object-fit: center;
+    object-position: center;
+    border-radius: 30px;
+    padding: 10px;
+    margin-bottom: 8px;
+}
+
+#card h3{
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+#card h5{
+    font-size: 17px;
+    color: rgba(255, 0, 0, 0.781);
+    margin-bottom: 20px;
+}
+
+#card .btn-container button{
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 25px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    &:active{
+        scale: 0.95;
+    }
+    background-color: rgb(224, 124, 219);
+    color: white;
+}
+
