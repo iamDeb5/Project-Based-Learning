@@ -1,0 +1,62 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+color: whitesmoke;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+html,body{
+width: 100%;
+height: 100%;
+}
+
+body{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes borderAnimate {
+    from{
+        --rotate:0deg;
+    }
+    to{
+        --rotate:360deg;
+    }
+}
+
+.box{
+    height: 450px;
+    max-width: 300px;
+    padding-inline: 10px;
+    padding-bottom: 10px;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* box-shadow: 0 0 50px rgb(202, 9, 93); */
+    border-radius: 15px;
+
+    background: 
+        linear-gradient(black) padding-box,
+        conic-gradient(from var(--rotate), black, rgb(202, 9, 93), black) border-box;
+        border: 5px solid rgba(255, 255, 255, 0);
+
+    animation: borderAnimate 10s;
+    animation-iteration-count: infinite;
+}
+
+.box img{
+    height: 70%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    padding-top: 5px;
+}
