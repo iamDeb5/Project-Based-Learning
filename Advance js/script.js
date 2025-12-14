@@ -562,7 +562,7 @@ function connectDB(cb){
     }, 1000);
 };
 function fetchRecords(cb){
-    console.log("fetching records....");
+    // console.log("fetching records....");
 
     setTimeout(() => {
         cb(["A","B","C"])
@@ -572,13 +572,121 @@ function fetchRecords(cb){
 
 connectDB((err,msg) => {
     if (err){
-        console.log(err);
+        // console.log(err);
         return;
     }
 
-    console.log(msg);
+    // console.log(msg);
 
     fetchRecords((records) => {
-        console.log(`Records - ${records}`);
+        // console.log(`Records - ${records}`);
+    })
+})
+
+
+
+// Question - 14
+// Food Order Processing
+
+// let dish = prompt("What dish you need sir ?");
+
+// function takeOrder(dish, cb){
+//     setTimeout(() => {
+//         cb(`Order recived for ${dish}`)
+//     }, 1000);
+// };
+// function cookFood(dish, cb){
+//     setTimeout(() => {
+//         cb(`${dish} cooked`)
+//     }, 2000);
+// };
+// function deliverFood(dish, cb){
+//     setTimeout(() => {
+//         cb(`${dish} delivered`)
+//     }, 1000);
+// };
+
+
+// takeOrder(dish, (status) => {
+//     // console.log(status);
+//     cookFood(dish, (cookStatus) => {
+//         // console.log(cookStatus);
+//         deliverFood(dish, (deliverStatus) => {
+//             // console.log(deliverStatus);
+//         })
+//     })
+// })
+
+
+
+// Question - 15
+// Quiz System
+
+function askQuestion(cb){
+    setTimeout(() => {
+        // cb(Number(prompt("What is 2+2 ?")))
+    }, 1000);
+}
+
+function checkAnswer(ans, cb){
+    // console.log("Checking Answer....");
+    
+    setTimeout(() => {
+        if (ans === 4){
+            cb("Your answer is correct")
+        }
+        else{
+            cb("You are wrong")
+        }
+    }, 1000);
+}
+
+function showResult(result, cb){
+    setTimeout(() => {
+        cb(result)
+    }, 500);
+}
+
+askQuestion((answer) => {
+    checkAnswer(answer, (result) => {
+        showResult(result, (msg) => {
+            // console.log(msg);
+        })
+    })
+    
+})
+
+
+
+//Question - 16
+//File Downloader Simulation
+
+function startDownload(url, cb){
+    console.log("Initializing Download.....");
+    
+    setTimeout(() => {
+        cb(`Download started: ${url}`);
+    }, 1000);
+};
+
+function showProgress(cb){
+    setTimeout(() => {
+        cb("Progress: 50%")
+    }, 1000);
+};
+
+function finishDownload(cb){
+    setTimeout(() => {
+        cb("Download Finished..")
+    }, 1000);
+};
+
+startDownload(prompt("paste the download link here...."), (startingMsg) => {
+    console.log(startingMsg);
+    showProgress((progressMsg) => {
+        console.log(progressMsg);
+        finishDownload((finishMsg) => {
+            console.log(finishMsg);
+        })
     })
 })
